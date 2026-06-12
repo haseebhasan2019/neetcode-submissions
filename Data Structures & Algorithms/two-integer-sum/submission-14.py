@@ -1,0 +1,10 @@
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        # Iterate through nums
+        # If the complement is in the map - return both, otherwise add it to the map
+        d = {}
+        for i, num in enumerate(nums):
+            if (target-num) in d:
+                return [d[target-num], i]
+            d[num] = i
+        return [-1]
